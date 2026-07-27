@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+::selection {
+  background-color: #7fada5;
+  color: #12151a;
+}
+
+@layer utilities {
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-blink {
+    animation: none;
+  }
+}
